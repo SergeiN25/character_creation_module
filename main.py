@@ -13,7 +13,7 @@ def attack(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(-3, -1)}')
-    return None
+    return "None"
 
 
 def defence(char_name: str, char_class: str) -> str:
@@ -23,7 +23,7 @@ def defence(char_name: str, char_class: str) -> str:
         return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
-    return None
+    return "None"
 
 
 def special(char_name: str, char_class: str) -> str:
@@ -34,7 +34,7 @@ def special(char_name: str, char_class: str) -> str:
         return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
-    return None
+    return "None"
 
 
 def start_training(char_name: str, char_class: str) -> str:
@@ -49,7 +49,7 @@ def start_training(char_name: str, char_class: str) -> str:
           'defence — чтобы блокировать атаку противника или '
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    cmd: str = None
+    cmd: str = "None"
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd == 'attack':
@@ -77,7 +77,7 @@ def choice_char_class() -> str:
         if char_class == 'healer':
             print('Лекарь — могущественный заклинатель. '
                   'Черпает силы из природы, веры и духов.')
-        approve_choice: str = input('Нажми (Y), чтобы подтвердить выбор, '
+        approve_choice = input('Нажми (Y), чтобы подтвердить выбор, '
                                     'или любую другую кнопку, '
                                     'чтобы выбрать другого персонажа ').lower()
     return char_class
